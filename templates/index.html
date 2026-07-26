@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuakeWatch</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+    <h1>QuakeWatch</h1>
+    <p class="subtitle">
+        Recent earthquake activity, with a focus on the Lake Kivu /
+        Albertine Rift region near Rwanda.
+    </p>
+</header>
+
+<main>
+    <section class="controls">
+        <div class="control-group">
+            <label for="region">Region</label>
+            <select id="region">
+                <option value="kivu" selected>Near Rwanda (Lake Kivu / Rift Valley)</option>
+                <option value="world">Worldwide</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="min_mag">Minimum magnitude</label>
+            <select id="min_mag">
+                <option value="0" selected>Any</option>
+                <option value="2.5">2.5+</option>
+                <option value="4.5">4.5+</option>
+                <option value="6.0">6.0+</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="window">Time range</label>
+            <select id="window">
+                <option value="day">Past day</option>
+                <option value="week" selected>Past week</option>
+                <option value="month">Past month</option>
+                <option value="year">Past year</option>
+            </select>
+        </div>
+        <div class="control-group">
+            <label for="sort">Sort by</label>
+            <select id="sort">
+                <option value="time" selected>Most recent</option>
+                <option value="magnitude">Strongest first</option>
+            </select>
+        </div>
+    </section>
+
+    <p id="status" class="status"></p>
+    <ul id="results" class="results"></ul>
+</main>
+
+<footer>
+    <p>
+        Data from the
+        <a href="https://earthquake.usgs.gov/" target="_blank" rel="noopener">
+            USGS Earthquake Hazards Program</a>, a public, keyless API.
+    </p>
+</footer>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

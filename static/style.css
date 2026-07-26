@@ -1,0 +1,140 @@
+:root {
+    --bg: #0e1420;
+    --card: #161f2e;
+    --text: #e8edf5;
+    --muted: #8a97ab;
+    --accent: #4f8cff;
+    --green: #4caf50;
+    --yellow: #d4b106;
+    --orange: #e0792b;
+    --red: #e0453c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+header {
+    padding: 2rem 1.5rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+}
+
+.subtitle {
+    color: var(--muted);
+    max-width: 40rem;
+    margin: 0.5rem auto 0;
+}
+
+main {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1.5rem 2rem;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+select {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid #2a3547;
+    border-radius: 0.4rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.95rem;
+}
+
+.status {
+    text-align: center;
+    color: var(--muted);
+    min-height: 1.5rem;
+}
+
+.results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quake-card {
+    background: var(--card);
+    border-radius: 0.6rem;
+    padding: 1rem 1.2rem;
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.magnitude {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0;
+    color: #08111f;
+}
+
+.mag-low { background: var(--green); }
+.mag-mid { background: var(--yellow); }
+.mag-high { background: var(--orange); }
+.mag-severe { background: var(--red); color: #fff; }
+
+.quake-info .place {
+    font-weight: 600;
+    margin: 0 0 0.15rem;
+}
+
+.quake-info .meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0 0 0.3rem;
+}
+
+.quake-info .note {
+    font-size: 0.85rem;
+    margin: 0 0 0.3rem;
+}
+
+.quake-info a {
+    color: var(--accent);
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.quake-info a:hover { text-decoration: underline; }
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 1.5rem;
+}
+
+footer a { color: var(--accent); }
